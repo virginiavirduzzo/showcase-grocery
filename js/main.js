@@ -34,11 +34,12 @@
     const itemsCount = document.querySelector('.tot-products')
     const totPrice = document.querySelector('.cart-price')
     const products = document.querySelectorAll('.product')
-    
+    const addToCartButtons = document.querySelectorAll('.buy')
+
     for (let i = 0; i < products.length; i++) {
-    let product = products[i];
-    product.setAttribute("draggable", "true")
-    product.addEventListener('dragstart', dragStart)
+        let product = products[i];
+        product.setAttribute("draggable", "true")
+        product.addEventListener('dragstart', dragStart)
     }
 
     cart.addEventListener('drop', dropProduct)
@@ -83,10 +84,16 @@
         }
         updateCart()
         deleteCartItems()
-      }
+    }
 
-    function addToCartButton(id) {
-        let item = document.querySelector('#'+id)
+    for (let i = 0; i < addToCartButtons.length; i++) {
+        let addToCartButton = addToCartButtons[i]
+        addToCartButton.addEventListener('click', addToCartWithButton)
+    }
+
+    function addToCartWithButton(event) {
+        let item = this.closest(".product")
+        let id = item.getAttribute('id')
         addToCart(item, id)
     }
 
@@ -162,9 +169,42 @@
     
     function resetQuantityInput() {
         for (let i = 0; i < products.length; i++) {
-        let product = products[i];
-        product.querySelector('.quantity').value = 1
-    }
+            let product = products[i];
+            product.querySelector('.quantity').value = 1
+        }
     }
 
+    // Start delete item/s events
+    function deleteCartItems() {
+        const cartListWrapper = document.querySelector('.cart-list-wrapper')
+        let cartProducts = cartListWrapper.querySelectorAll('.product')
+        let deleteAllExists = cartListWrapper.querySelectorAll(".btn-delete");
+        
+        if (cartProducts.length > 1 && deleteAllExists.length == 0) {
+            const deleteAllBtn = document.createElement('button')
+            deleteAllBtn.setAttribute('class', 'btn btn-sm btn-delete')
+            deleteAllBtn.innerHTML = 'Eliminar todos'
+            cartListWrapper.appendChild(deleteAllBtn)
+
+            deleteAllBtn.addEventListener('click', deleteAllProducts)
+        }
+    }
+
+    function deleteAllProducts() {
+        const cartList = document.querySelector('.cart-list')
+        cartList.innerHTML = ' '
+        this.parentNode.removeChild(this)
+        updateCart()
+      }
+
+
+    function hideDeleteAll() {
+        const cartListWrapper = document.querySelector('.cart-list-wrapper')
+        let cartProducts = cartListWrapper.querySelectorAll('.product')
+        let deleteAllBtn = cartListWrapper.querySelector(".btn-delete")
+
+        if (cartProducts.length <= 1 && deleteAllBtn) {
+            deleteAllBtn.parentNode.removeChild(deleteAllBtn)
+        }
+    }
 })();
