@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Showcase Grocery</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    
+    <script src="https://kit.fontawesome.com/3262f75e4a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
@@ -22,12 +23,9 @@
                 <li class="nav-item">
                   <a class="nav-link" href="#">Contactos</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
               </ul>
               <form class="form-inline mt-2 mt-md-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Busca tu producto">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Busca</button>
               </form>
             </div>
@@ -42,24 +40,24 @@
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="http://via.placeholder.com/1900x500" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>First slide label</h5>
-                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                <img src="images/slider-1.webp" class="d-block w-100" alt="comida drag and drop 1">
+                <div class="carousel-caption d-md-block">
+                  <h5>Comida sana<br> en un DRAG</h5>
+                  <p>Nunca ha sido más facil hacer la compra.</p>
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="http://via.placeholder.com/1900x500" class="d-block w-100" alt="..">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <img src="images/slider-2.webp" class="d-block w-100" alt="comida drag and drop 2">
+                <div class="carousel-caption d-md-block">
+                  <h5>Elige tus <br>productos frescos</h5>
+                  <p>Nos encargaremos de llevartelos a casa.</p>
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="http://via.placeholder.com/1900x500" class="d-block w-100" alt="..">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                <img src="images/slider-3.webp" class="d-block w-100" alt="comida drag and drop 3">
+                <div class="carousel-caption d-md-block">
+                  <h5>Del productor<br> al consumidor</h5>
+                  <p>Productos frescos de temporada.</p>
                 </div>
               </div>
             </div>
@@ -72,38 +70,152 @@
               <span class="sr-only">Next</span>
             </a>
         </div>
-        <section class="productList mt-5">
+        <section class="product-list my-5">
           <div class="container">
             <div class="row">
-              <div class="col-sm">
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="...">
+              <div class="col-6 col-md col-sm-6 mb-4">
+                <div class="card product" id="product-platano" draggable="true">
+                  <div class="card-image">
+                    <img src="images/platanos.jpg" class="card-img-top" alt="platanos">
+                    <div class="actions">
+                      <div class="buy" onclick="addToCartButton('product-platano')"><i class="fas fa-shopping-basket"><sup>+</sup></i></div>
+                      <div class="number">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary remove" type="button">-</button>
+                          </div>
+                          <input type="number" class="form-control quantity" placeholder="1" aria-label="cantidad de producto" size="1" min="0" max="10" aria-describedby="button-addon4">
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-secondary add" type="button">+</button>
+                          </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
                   <div class="card-body">
-                    <h5 class="card-title">Producto 1</h5>
-                    <p class="card-text">Lorem ipsum.</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
+                      <div class="card-title">
+                        <h5>Platanos</h5>
+                        <div>
+                          <span class="price">2</span>
+                          <small>€</small>
+                        </div>
+                      </div>
+                      <p class="product-info color-primary">1 pieza 200g</p>
                   </div>
                 </div>
               </div>
-              <div class="col-sm">
-                One of 5 columns
+              <div class="col-6 col-md col-sm-6 mb-4">
+                <div class="card product" id="product-berenjena" draggable="true">
+                  <div class="card-image">
+                    <img src="images/berenjenas.jpg" class="card-img-top" alt="berenjenas">
+                    <div class="actions">
+                      <div class="buy" onclick="addToCartButton('product-berenjena')"><i class="fas fa-shopping-basket"><sup>+</sup></i></div>
+                      <div class="number">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary remove" type="button">-</button>
+                          </div>
+                          <input type="number" class="form-control quantity" placeholder="1" aria-label="cantidad de producto" maxlength="1" size="1" min="0" max="10" aria-describedby="button-addon4">
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-secondary add" type="button">+</button>
+                          </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                      <div class="card-title">
+                        <h5>Berenjenas</h5>
+                        <div>
+                          <span class="price">3</span>
+                          <small>€</small>
+                        </div>
+                      </div>
+                      <p class="product-info color-primary">1 pieza 200g</p>
+                  </div>
+                </div>
               </div>
-              <div class="col-sm">
-                One of 5 columns
+              <div class="col-6 col-md col-sm-6 mb-4">
+                <div class="card product" id="product-tomate" draggable="true">
+                  <div class="card-image">
+                    <img src="images/tomates.jpg" class="card-img-top" alt="Tomates">
+                    <div class="actions">
+                      <div class="buy" onclick="addToCartButton('product-tomate')"><i class="fas fa-shopping-basket"><sup>+</sup></i></div>
+                      <div class="number">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary remove" type="button">-</button>
+                          </div>
+                          <input type="number" class="form-control quantity" placeholder="1" aria-label="cantidad de producto" size="1" min="0" max="10" aria-describedby="button-addon4">
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-secondary add" type="button">+</button>
+                          </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                      <div class="card-title">
+                        <h5>Tomates</h5>
+                        <div>
+                          <span class="price">1</span>
+                          <small>€</small>
+                        </div>
+                      </div>
+                      <p class="product-info color-primary">1 pieza 50g</p>
+                  </div>
+                </div>
               </div>
-              <div class="col-sm">
-                One of 5 columns
-              </div>
-              <div class="col-sm">
-                One of 5 columns
+              <div class="col-6 col-md col-sm-6 mb-4">
+                <div class="card product" id="product-brocoli" draggable="true">
+                  <div class="card-image">
+                    <img src="images/brocoli.jpg" class="card-img-top" alt="brocoli">
+                    <div class="actions">
+                      <div class="buy" onclick="addToCartButton('product-brocoli')"><i class="fas fa-shopping-basket"><sup>+</sup></i></div>
+                      <div class="number">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary remove" type="button">-</button>
+                          </div>
+                          <input type="number" class="form-control quantity" placeholder="1" aria-label="cantidad de producto" size="1" min="0" max="10" aria-describedby="button-addon4">
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-secondary add" type="button">+</button>
+                          </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                      <div class="card-title">
+                        <h5>Brocoli</h5>
+                        <div>
+                          <span class="price">2</span>
+                          <small>€</small>
+                        </div>
+                      </div>
+                      <p class="product-info color-primary">1 pieza 150g</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
+        <div class="cart-wrapper">
+          <div class="cart-list-wrapper shadow-sm">
+            <div class="cart-list"></div>
+          </div>
+          <div class="cart-icon-wrapper">
+            <div class="cart-icon">
+              <i class="fas fa-shopping-basket"><sup class="ml-1 tot-products">0</sup></i>
+            </div>
+            <div class="cart-price"></div>
+          </div>
+        </div>
     </main>
-    <footer>
-
+    <footer class="p-1 pr-3 mt-3 text-right">
+      <small>2020 © · Virginia Virduzzo</small>
     </footer>
+
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

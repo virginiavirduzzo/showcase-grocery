@@ -130,7 +130,7 @@ input[type=number] {
 .cart-wrapper {
     position: fixed;
     right: 0;
-    bottom: 30px;
+    bottom: 40px;
     z-index: 2;
 }
 
@@ -224,6 +224,10 @@ input[type=number] {
     color: white;
 }
 
+footer {
+    background: #333;
+    color: white;
+}
 @media only screen and (max-width: 600px) {
     .carousel-item img {
       height: 400px !important;
