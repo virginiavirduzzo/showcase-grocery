@@ -27,4 +27,21 @@
         }
       })
     }
+
+    // Start drag and drop events & vars
+    const cart = document.querySelector('.cart-wrapper')
+    const cartList = document.querySelector('.cart-list')
+    const itemsCount = document.querySelector('.tot-products')
+    const totPrice = document.querySelector('.cart-price')
+    const products = document.querySelectorAll('.product')
+    
+    for (let i = 0; i < products.length; i++) {
+    let product = products[i];
+    product.setAttribute("draggable", "true")
+    product.addEventListener('dragstart', dragStart)
+    }
+
+    cart.addEventListener('drop', dropProduct)
+    cart.addEventListener('dragover', dragOver)
+
 })();
