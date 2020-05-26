@@ -44,4 +44,31 @@
     cart.addEventListener('drop', dropProduct)
     cart.addEventListener('dragover', dragOver)
 
+    // Define drag events
+    function dragStart(event){
+        event.dataTransfer.effectAllowed = "move"
+        event.dataTransfer.dropEffect = "move"
+        var target = event.target || event.srcElement
+        var success = event.dataTransfer.setData('Text', target.id)
+    }
+
+    function dragOver(event){
+        if(event.preventDefault) event.preventDefault()
+        if (event.stopPropagation) event.stopPropagation()
+        else event.cancelBubble = true
+        return false;
+    }
+    
+    function dropProduct(event){            
+        if(event.preventDefault) event.preventDefault()
+        if (event.stopPropagation) event.stopPropagation()
+        else event.cancelBubble = true
+        
+        const id = event.dataTransfer.getData("Text");
+        const item = document.querySelector('#'+id);        
+                    
+        addToCart(item, id)
+        
+        return false
+    }
 })();
