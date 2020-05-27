@@ -11,7 +11,10 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
-            <a class="navbar-brand" href="#">Grocery</a>
+          <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+              <img src="images/grocery-logo.png" alt="Grocery icon" height="45" width="auto">
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -25,11 +28,12 @@
                 </li>
               </ul>
               <form class="form-inline mt-2 mt-md-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Busca tu producto">
+                <input class="form-control mr-sm-2" type="text" placeholder="Busca tu producto" aria-label="Busca tu producto">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Busca</button>
               </form>
             </div>
-          </nav>
+          </div>
+        </nav>
     </header>
     <main>
         <div id="carouselCaptions" class="carousel slide" data-ride="carousel">
@@ -57,7 +61,7 @@
                 <img src="images/slider-3.webp" class="d-block w-100" alt="comida drag and drop 3">
                 <div class="carousel-caption d-md-block">
                   <h5>Del productor<br> al consumidor</h5>
-                  <p>Productos frescos de temporada.</p>
+                  <p>Productos de temporada.</p>
                 </div>
               </div>
             </div>
@@ -72,6 +76,8 @@
         </div>
         <section class="product-list my-5">
           <div class="container">
+            <h1>Elige tus productos</h1>
+            <p>Arrastrandolos en el carrito</p>
             <div class="row">
               <div class="col-6 col-md col-sm-6 mb-4">
                 <div class="card product" id="product-platano" draggable="true">
@@ -194,6 +200,134 @@
                         </div>
                       </div>
                       <p class="product-info color-primary">1 pieza 150g</p>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+
+            <div class="row">
+              <div class="col-6 col-md col-sm-6 mb-4">
+                <div class="card product" id="product-coliflor" draggable="true">
+                  <div class="card-image">
+                    <img src="images/coliflor.jpg" class="card-img-top" alt="coliflor">
+                    <div class="actions">
+                      <div class="buy"><i class="fas fa-shopping-basket"><sup>+</sup></i></div>
+                      <div class="number">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary remove" type="button">-</button>
+                          </div>
+                          <input type="number" class="form-control quantity" placeholder="1" aria-label="cantidad de producto" size="1" min="0" max="10" aria-describedby="button-addon4">
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-secondary add" type="button">+</button>
+                          </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                      <div class="card-title">
+                        <h5>Coliflor</h5>
+                        <div>
+                          <span class="price">2</span>
+                          <small>€</small>
+                        </div>
+                      </div>
+                      <p class="product-info color-primary">1 pieza 150g</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md col-sm-6 mb-4">
+                <div class="card product" id="product-zanaoria" draggable="true">
+                  <div class="card-image">
+                    <img src="images/zanaorias.jpg" class="card-img-top" alt="zanaorias">
+                    <div class="actions">
+                      <div class="buy"><i class="fas fa-shopping-basket"><sup>+</sup></i></div>
+                      <div class="number">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary remove" type="button">-</button>
+                          </div>
+                          <input type="number" class="form-control quantity" placeholder="1" aria-label="cantidad de producto" size="1" min="0" max="10" aria-describedby="button-addon4">
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-secondary add" type="button">+</button>
+                          </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                      <div class="card-title">
+                        <h5>Zanaorias</h5>
+                        <div>
+                          <span class="price">2</span>
+                          <small>€</small>
+                        </div>
+                      </div>
+                      <p class="product-info color-primary">1 pieza 150g</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md col-sm-6 mb-4">
+                <div class="card product" id="product-uva" draggable="true">
+                  <div class="card-image">
+                    <img src="images/uva.jpg" class="card-img-top" alt="uva">
+                    <div class="actions">
+                      <div class="buy"><i class="fas fa-shopping-basket"><sup>+</sup></i></div>
+                      <div class="number">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary remove" type="button">-</button>
+                          </div>
+                          <input type="number" class="form-control quantity" placeholder="1" aria-label="cantidad de producto" size="1" min="0" max="10" aria-describedby="button-addon4">
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-secondary add" type="button">+</button>
+                          </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                      <div class="card-title">
+                        <h5>Uva</h5>
+                        <div>
+                          <span class="price">2</span>
+                          <small>€</small>
+                        </div>
+                      </div>
+                      <p class="product-info color-primary">1 pieza 150g</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md col-sm-6 mb-4">
+                <div class="card product" id="product-manzana" draggable="true">
+                  <div class="card-image">
+                    <img src="images/manzanas.jpg" class="card-img-top" alt="manzana">
+                    <div class="actions">
+                      <div class="buy"><i class="fas fa-shopping-basket"><sup>+</sup></i></div>
+                      <div class="number">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary remove" type="button">-</button>
+                          </div>
+                          <input type="number" class="form-control quantity" placeholder="1" aria-label="cantidad de producto" size="1" min="0" max="10" aria-describedby="button-addon4">
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-secondary add" type="button">+</button>
+                          </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                      <div class="card-title">
+                        <h5>Manzana</h5>
+                        <div>
+                          <span class="price">2</span>
+                          <small>€</small>
+                        </div>
+                      </div>
+                      <p class="product-info color-primary">1 pieza 200g</p>
                   </div>
                 </div>
               </div>

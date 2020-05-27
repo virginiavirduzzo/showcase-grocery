@@ -141,6 +141,8 @@ input[type=number] {
     margin-right: 30px;
     margin-bottom: 10px;
     background-color: white;
+    max-height: 80vh;
+    overflow: auto;
 }
 
 .cart-list .card {
@@ -205,6 +207,15 @@ input[type=number] {
     padding: 0;
 }
 
+.cart-list .quantity,
+.cart-list .sub-total {
+    color: #797979;  
+}
+
+.cart-list .quantity {
+    margin: 0 .25rem;
+}
+
 .delete-item {
     cursor: pointer;
     color: #EF572C;
@@ -228,6 +239,7 @@ footer {
     background: #333;
     color: white;
 }
+
 @media only screen and (max-width: 600px) {
     .carousel-item img {
       height: 400px !important;
